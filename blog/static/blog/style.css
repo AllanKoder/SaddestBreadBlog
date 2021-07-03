@@ -1,0 +1,53 @@
+nav.navbar.navbar-expand-lg.navbar-light
+{
+    background: #ffeaa3;
+}
+
+.nav-link
+{
+    font-size: 20px;
+}
+
+.bread
+{
+    background-color: #ffeaa3;
+}
+.bottom-text
+{
+   color: #7d6101;
+   padding-right: 25px
+}
+.small-caption
+{
+   color: #a39543;
+   font-size: 12px
+   align: right;
+}
+
+.breadbackground
+{
+    background: url("Assets/BreadTrans.png");
+    height: 90px;
+    background-size: 5%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: 85px 85px;
+    background-color: #f7d874;
+    background-position: 5%;
+
+}
+.text-image-gallery
+{
+    height: auto;
+}
+.image-gallery
+{
+    max-height: 250px;
+    height: auto;
+}
+#HeadNav
+{
+    text-indent: 0px;
+    font-size: 24px;
+    color: #7d6101;
+}

@@ -1,0 +1,179 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'blog/game.css' %}">
+<link rel="stylesheet" href="{% static 'blog/slides.css' %}">
+<script type="text/javascript" src="galleryData.json"></script>
+
+<div class = "container">
+    <h2 style = "padding-top: 80px; padding-bottom: 5px; text-align: center; margin: 0 auto;">Project Gallery</h2>
+    <div class="frame">
+   <div class="camera">
+      <div class="map pixel-art">
+         <div class="character" facing="down" walking="true">
+            <div class="character_spritesheet pixel-art"></div>
+         </div>
+      </div>
+      <div class="dpad">
+         <div class="DemoDirectionUI flex-center">
+               <button class="dpad-button dpad-left">
+                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 13 13" shape-rendering="crispEdges">
+                       <path class="Arrow_outline-top"  stroke="#5f5f5f" d="M1 0h11M0 1h1M12 1h1M0 2h1M12 2h1M0 3h1M12 3h1M0 4h1M12 4h1M0 5h1M12 5h1M0 6h1M12 6h1M0 7h1M12 7h1M0 8h1M12 8h1" />
+                       <path class="Arrow_surface" stroke="#f5f5f5" d="M1 1h11M1 2h11M1 3h5M7 3h5M1 4h4M7 4h5M1 5h3M7 5h5M1 6h4M7 6h5M1 7h5M7 7h5M1 8h11" />
+                       <path class="Arrow_arrow-inset"  stroke="#434343" d="M6 3h1M5 4h1M4 5h1" />
+                       <path class="Arrow_arrow-body" stroke="#5f5f5f" d="M6 4h1M5 5h2M5 6h2M6 7h1" />
+                       <path class="Arrow_outline-bottom" stroke="#434343" d="M0 9h1M12 9h1M0 10h1M12 10h1M0 11h1M12 11h1M1 12h11" />
+                       <path class="Arrow_edge" stroke="#ffffff" d="M1 9h11" />
+                       <path class="Arrow_front" stroke="#cccccc" d="M1 10h11M1 11h11" />
+                   </svg>
+               </button>
+               <button class="dpad-button dpad-up">
+                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 13 13" shape-rendering="crispEdges">
+                       <path class="Arrow_outline-top"  stroke="#5f5f5f" d="M1 0h11M0 1h1M12 1h1M0 2h1M12 2h1M0 3h1M12 3h1M0 4h1M12 4h1M0 5h1M12 5h1M0 6h1M12 6h1M0 7h1M12 7h1M0 8h1M12 8h1" />
+                       <path class="Arrow_surface" stroke="#f5f5f5" d="M1 1h11M1 2h11M1 3h11M1 4h5M7 4h5M1 5h4M8 5h4M1 6h3M9 6h3M1 7h11M1 8h11" />
+                       <path class="Arrow_arrow-inset"  stroke="#434343" d="M6 4h1M5 5h1M7 5h1" />
+                       <path class="Arrow_arrow-body" stroke="#5f5f5f" d="M6 5h1M4 6h5" />
+                       <path class="Arrow_outline-bottom" stroke="#434343" d="M0 9h1M12 9h1M0 10h1M12 10h1M0 11h1M12 11h1M1 12h11" />
+                       <path class="Arrow_edge" stroke="#ffffff" d="M1 9h11" />
+                       <path class="Arrow_front" stroke="#cccccc" d="M1 10h11M1 11h11" />
+                   </svg>
+               </button>
+               <button class="dpad-button dpad-down">
+                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 13 13" shape-rendering="crispEdges">
+                       <path class="Arrow_outline-top" stroke="#5f5f5f" d="M1 0h11M0 1h1M12 1h1M0 2h1M12 2h1M0 3h1M12 3h1M0 4h1M12 4h1M0 5h1M12 5h1M0 6h1M12 6h1M0 7h1M12 7h1M0 8h1M12 8h1" />
+                       <path class="Arrow_surface" stroke="#f5f5f5" d="M1 1h11M1 2h11M1 3h11M1 4h3M9 4h3M1 5h4M8 5h4M1 6h5M7 6h5M1 7h11M1 8h11" />
+                       <path class="Arrow_arrow-inset" stroke="#434343" d="M4 4h5" />
+                       <path class="Arrow_arrow-body" stroke="#5f5f5f" d="M5 5h3M6 6h1" />
+                       <path class="Arrow_outline-bottom" stroke="#434343" d="M0 9h1M12 9h1M0 10h1M12 10h1M0 11h1M12 11h1M1 12h11" />
+                       <path class="Arrow_edge" stroke="#ffffff" d="M1 9h11" />
+                       <path class="Arrow_front" stroke="#cccccc" d="M1 10h11M1 11h11" />
+                   </svg>
+               </button>
+               <button class="dpad-button dpad-right">
+                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -0.5 13 13" shape-rendering="crispEdges">
+                       <path class="Arrow_outline-top"  stroke="#5f5f5f" d="M1 0h11M0 1h1M12 1h1M0 2h1M12 2h1M0 3h1M12 3h1M0 4h1M12 4h1M0 5h1M12 5h1M0 6h1M12 6h1M0 7h1M12 7h1M0 8h1M12 8h1" />
+                       <path class="Arrow_surface" stroke="#f5f5f5" d="M1 1h11M1 2h11M1 3h5M7 3h5M1 4h5M8 4h4M1 5h5M9 5h3M1 6h5M8 6h4M1 7h5M7 7h5M1 8h11" />
+                       <path class="Arrow_arrow-inset"  stroke="#434343" d="M6 3h1M7 4h1M8 5h1" />
+                       <path class="Arrow_arrow-body" stroke="#5f5f5f" d="M6 4h1M6 5h2M6 6h2M6 7h1" />
+                       <path class="Arrow_outline-bottom" stroke="#434343" d="M0 9h1M12 9h1M0 10h1M12 10h1M0 11h1M12 11h1M1 12h11" />
+                       <path class="Arrow_edge" stroke="#ffffff" d="M1 9h11" />
+                       <path class="Arrow_front" stroke="#cccccc" d="M1 10h11M1 11h11" />
+                   </svg>
+               </button>
+           </div>
+      </div>
+
+   <metadata>Thanks to the tutorial made by Drew Conley</metadata>
+
+    </svg>
+
+    </div>
+    </div>
+      <br>
+      <div class="row">
+          <div class="col-sm-6">
+            <h1 id="title">Project: </h1>
+              <br>
+            <p id="info">This is the information for the blog post </p>
+          </div>
+            <div class="col-sm-6">
+          <div class="slideshow-container">
+                  <!-- Full-width images with number and caption text -->
+                  <div class="mySlides">
+                      <center>
+                    <img id = "image1" src= "{% static 'blog/Assets/Gallery/Post1-1.png' %}" class="img-fluid img-thumbnail" alt="image" style = "max-height: 270px;  height: auto;">
+                      <i><div class = "caption" id = "cap1" class="text"></div></i>
+                     </center>
+                  </div>
+
+                  <div class="mySlides">
+                      <center>
+                        <img id = "image2" src= "{% static 'blog/Assets/Gallery/Post1-2.png' %}" class="img-fluid img-thumbnail" alt="image" style = "max-height: 270px;  height: auto;">
+                      <i><div class = "caption" id = "cap2" class="text"></div></i>
+                    </center>
+                  </div>
+
+                  <div class="mySlides">
+                      <center>
+                        <img id = "image3" src= "{% static 'blog/Assets/Gallery/Post1-3.png' %}" class="img-fluid img-thumbnail" alt="image" style = "max-height: 270px;  height: auto;">
+                      <i><div class = "caption" id = "cap3" class="text"></div></i>
+                     </center>
+                  </div>
+                <div style="text-align:center">
+                  <span class="dot" onclick="currentSlide(1)"></span>
+                  <span class="dot" onclick="currentSlide(2)"></span>
+                  <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+                  <!-- Next and previous buttons -->
+                  <a class="prev" onclick="plusSlides(-1)" style = "color: #ffcf73;">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)" style = "color: #ffcf73;">&#10095;</a>
+              <br>
+
+                </div>
+            </div>
+    </div>
+</div>
+    <div class="text-image-gallery bread">
+        <br>
+            <div class = "container">
+
+              <div class="row">
+                <div class="col-sm-6">
+                    <h1>Why do I love Programming?</h1>
+                  <p>
+                      As a kid, I saw programming as a new way to tell a story, I was fascinated by the idea. I started with the basic idea of making video games, and reached an advanced level. I wanted to learn more about logic. I was fascinated by all the possibilities of technology and how it will change the world. I love programming because I love creating. As time passes, I will only continue to learn more and develop my programming skills.
+                  </p>
+                </div>
+                <div class="col-sm-6">
+                    <center>
+                        <img src= "{% static 'blog/Assets/text_programming.png' %}" class="img-fluid image-gallery" alt="image">
+                    </center>
+                </div>
+              </div>
+            </div>
+        <br>
+    </div>
+    <div class="text-image-gallery">
+        <div class = "container">
+            <br>
+              <div class="row">
+                <div class="col-sm-4">
+                    <center>
+                        <img src= "{% static 'blog/Assets/BreadTrans.png' %}" class="img-fluid image-gallery" alt="image">
+                    </center>
+                </div>
+               <div class="col-sm-8">
+                    <h1>Who am I?</h1>
+                  <p>
+                    My name is Allan, and I go online as “SadBread”. I am a student at SWC highschool. I am currently in grade 11. I am studying computer science. In my time, I participate in hackathons, coding competitions and robots. I want to continue to advance my programming ability to become the best I can.                   </p>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="text-image-gallery bread">
+        <div class = "container">
+
+        <br>
+          <div class="row">
+            <div class="col-sm-6">
+                <h1>Clubs:</h1>
+              <p>
+                I founded and run the Game Development club at Sir Winston Churchill Highschool, Calgary. The club teaches how to program in the Unity Engine using C#, messing with AR applications and game development competitions. The club has been run since 2020-2021. A website for the club is under development.
+                <a href="https://www.instagram.com/swcgamedev/">Instagram</a><br>
+                I will be the execs for the SWC programing and finance club next year. These clubs will have websites in the future as well
+              </p>
+            </div>
+            <div class="col-sm-6">
+                <center>
+                    <img src= "{% static 'blog/Assets/GDCLogoTransHigh.png' %}" class="img-fluid image-gallery" alt="image">
+                </center>
+            </div>
+          </div>
+        </div>
+    </div>
+<br>
+<br>
+    <script src="{% static 'blog/controls.js' %}"></script>
+
+    {% endblock content %}

@@ -1,0 +1,58 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+<br>
+<br>
+ <div class="text-image-gallery bread">
+        <div class = "container">
+        <br>
+          <div class="row">
+            <div class="col-sm-6">
+                <h1>What is this Blog?</h1>
+              <p>
+                This blog is a place where I can post my projects, information about me and blog about my progress as a programmer. Simple as that. Come look around and mess with the gallery interactives!
+              </p>
+            </div>
+            <div class="col-sm-6">
+                <center>
+                    <img src= "{% static 'blog/Assets/gallery_character.gif' %}" class="img-fluid image-gallery" alt="image">
+                </center>
+            </div>
+          </div>
+        </div>
+    </div>
+ <div class="text-image-gallery">
+        <div class = "container">
+        <br>
+          <div class="row">
+            <div class="col-sm-6">
+                <center>
+                    <img src= "{% static 'blog/Assets/PixelBread.png' %}" class="img-fluid image-gallery" alt="image">
+                </center>
+            </div>
+            <div class="col-sm-6">
+                <h1>Why did I make this Blog?</h1>
+              <p>
+As a starter of something new, it is quite something to provide a new perspective on it. When I was reading the book, <i>Deep Learning for Coders with fastai and PyTorch: AI Applications Without a PhD</i>, I found it interesting to create a blog to show my progress with Machine Learning. I have worked with Sklearn, but it was too simple and I wanted more. In the blog, I can talk about my journey not only for machine learning, but programming as a whole. Not only that, but feature some projects I am proud of.               </p>            </div>
+          </div>
+    </div>
+</div>
+ <div class="text-image-gallery bread">
+        <div class = "container">
+        <br>
+          <div class="row">
+            <div class="col-sm-6">
+                <h1>What is the future of the Blog?</h1>
+              <p>
+There is more information to be posted here, the blog is lacking in projects and whatnot, given time, it will advance to be much larger. I want it to also provide lessons in the future. I have created a good base for the blog and it will only get better in the future.            </div>
+            <div class="col-sm-6">
+                <center>
+                    <img src= "{% static 'blog/Assets/Pixel Sprite backgrounds.gif' %}" class="img-fluid image-gallery" alt="image">
+                </center>
+            </div>
+          </div>
+        </div>
+    </div>
+<br>
+<br>
+{% endblock content %}

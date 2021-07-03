@@ -1,0 +1,75 @@
+{% extends "blog/base.html" %}
+{% block content %}
+{% load static %}
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <h3>Journey of a Programmer</h3>
+    <p>A written blog of my progress and discoveries as a programmer</p>
+<br>
+    <div class="row">
+    <div class="col-sm-9">
+    <div class = "breadbackground"></div>
+    {% for post in posts reversed %}
+    <div class="container">
+
+<div style="border-style: outset ; border-color: #ffd587; margin-top: 10px; padding: 25px">
+      <article class="media content-section" style = "word-break: break-word;">
+        <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ post.category }}</a>
+              <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+            </div>
+        <h2><a class="article-title">{{ post.title }}</a></h2>
+        <p>{{ post.content }}</p>
+      </div>
+    </article>
+    {% if post.image %}
+    <center>
+        <!-- In the case of using AWS service for storing images
+<img src="{{ post.image.url }}" class="img-fluid" alt="image" style = "    max-width: 40%;   height: auto;">
+    -->
+    </center>
+    {% endif %}
+</div>
+        <hr style = "border-top: 5px solid #ffdeab;   border-radius: 12px;">
+    </div>
+        {% endfor %}
+    </div>
+    <div class="col-sm-3">
+
+          <div class="content-section" style = "position: fixed">
+            <h3>About</h3>
+            <p class='text-muted'>You can put any information here you'd like.
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light">Other Sites:
+                <ul>
+                    <li>
+                        <a href="https://github.com/TheSaddestbread">Github</a>
+                    </li>
+                    <li>
+                        <a href="https://sadbread.itch.io/">Itch.io</a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/the_saddest_bread/">Instagram</a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/allan-kong-a4a9b71b2/">LinkedIn</a>
+                    </li>
+                </ul>
+                </li>
+              </ul>
+            </p>
+          </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+{% endblock content %}
+
+
+<!--         <img src="{{ post.image.url }}" class="img-fluid" alt="image" style="width:150px">
