@@ -1,5 +1,5 @@
 # SadBreadBlogs
-This site will be hosted in the neat future with heroku.
+This site will be hosted in the near future with heroku.
 ![Post0-1](https://user-images.githubusercontent.com/74692833/124341875-e76c6380-db7c-11eb-8c67-1c9140f63a3f.png)
 There is an interactive js game where the player can move to a project in which I created in the past 
 
